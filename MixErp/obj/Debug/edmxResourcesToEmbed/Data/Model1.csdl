@@ -1,0 +1,625 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MixErpDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="MixErpDbEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="bBirims" EntityType="MixErpDbModel.bBirim" />
+    <EntitySet Name="bKategoris" EntityType="MixErpDbModel.bKategori" />
+    <EntitySet Name="blgCariTipis" EntityType="MixErpDbModel.blgCariTipi" />
+    <EntitySet Name="blgDepartmen" EntityType="MixErpDbModel.blgDepartman" />
+    <EntitySet Name="bMenseis" EntityType="MixErpDbModel.bMensei" />
+    <EntitySet Name="bOdemeTurleris" EntityType="MixErpDbModel.bOdemeTurleri" />
+    <EntitySet Name="ilcelers" EntityType="MixErpDbModel.ilceler" />
+    <EntitySet Name="illers" EntityType="MixErpDbModel.iller" />
+    <EntitySet Name="tblCaris" EntityType="MixErpDbModel.tblCari" />
+    <EntitySet Name="tblPersonels" EntityType="MixErpDbModel.tblPersonel" />
+    <EntitySet Name="tblStokDurums" EntityType="MixErpDbModel.tblStokDurum" />
+    <EntitySet Name="tblUrunAlis" EntityType="MixErpDbModel.tblUrunAli" />
+    <EntitySet Name="tblUrunAlisAlts" EntityType="MixErpDbModel.tblUrunAlisAlt" />
+    <EntitySet Name="tblUrunAlisUsts" EntityType="MixErpDbModel.tblUrunAlisUst" />
+    <EntitySet Name="tblUrunlers" EntityType="MixErpDbModel.tblUrunler" />
+    <EntitySet Name="tblUrunSatisAlts" EntityType="MixErpDbModel.tblUrunSatisAlt" />
+    <EntitySet Name="tblUrunSatisUsts" EntityType="MixErpDbModel.tblUrunSatisUst" />
+    <AssociationSet Name="FK_tblUrunAlisAlt_bBirim" Association="MixErpDbModel.FK_tblUrunAlisAlt_bBirim">
+      <End Role="bBirim" EntitySet="bBirims" />
+      <End Role="tblUrunAlisAlt" EntitySet="tblUrunAlisAlts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunler_bBirim" Association="MixErpDbModel.FK_tblUrunler_bBirim">
+      <End Role="bBirim" EntitySet="bBirims" />
+      <End Role="tblUrunler" EntitySet="tblUrunlers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunSatisAlt_bBirim" Association="MixErpDbModel.FK_tblUrunSatisAlt_bBirim">
+      <End Role="bBirim" EntitySet="bBirims" />
+      <End Role="tblUrunSatisAlt" EntitySet="tblUrunSatisAlts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunler_bMensei" Association="MixErpDbModel.FK_tblUrunler_bMensei">
+      <End Role="bKategori" EntitySet="bKategoris" />
+      <End Role="tblUrunler" EntitySet="tblUrunlers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCaris_blgCariTipis" Association="MixErpDbModel.FK_tblCaris_blgCariTipis">
+      <End Role="blgCariTipi" EntitySet="blgCariTipis" />
+      <End Role="tblCari" EntitySet="tblCaris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPersonel_blgDepartman" Association="MixErpDbModel.FK_tblPersonel_blgDepartman">
+      <End Role="blgDepartman" EntitySet="blgDepartmen" />
+      <End Role="tblPersonel" EntitySet="tblPersonels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunler_bKategori" Association="MixErpDbModel.FK_tblUrunler_bKategori">
+      <End Role="bMensei" EntitySet="bMenseis" />
+      <End Role="tblUrunler" EntitySet="tblUrunlers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlis_bOdemeTurleri" Association="MixErpDbModel.FK_tblUrunAlis_bOdemeTurleri">
+      <End Role="bOdemeTurleri" EntitySet="bOdemeTurleris" />
+      <End Role="tblUrunAli" EntitySet="tblUrunAlis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlisUst_bOdemeTurleri" Association="MixErpDbModel.FK_tblUrunAlisUst_bOdemeTurleri">
+      <End Role="bOdemeTurleri" EntitySet="bOdemeTurleris" />
+      <End Role="tblUrunAlisUst" EntitySet="tblUrunAlisUsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunSatisUst_bOdemeTurleri" Association="MixErpDbModel.FK_tblUrunSatisUst_bOdemeTurleri">
+      <End Role="bOdemeTurleri" EntitySet="bOdemeTurleris" />
+      <End Role="tblUrunSatisUst" EntitySet="tblUrunSatisUsts" />
+    </AssociationSet>
+    <AssociationSet Name="fk_il_no" Association="MixErpDbModel.fk_il_no">
+      <End Role="iller" EntitySet="illers" />
+      <End Role="ilceler" EntitySet="ilcelers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCaris_ilceler" Association="MixErpDbModel.FK_tblCaris_ilceler">
+      <End Role="ilceler" EntitySet="ilcelers" />
+      <End Role="tblCari" EntitySet="tblCaris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCaris_Iller" Association="MixErpDbModel.FK_tblCaris_Iller">
+      <End Role="iller" EntitySet="illers" />
+      <End Role="tblCari" EntitySet="tblCaris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlis_tblCaris" Association="MixErpDbModel.FK_tblUrunAlis_tblCaris">
+      <End Role="tblCari" EntitySet="tblCaris" />
+      <End Role="tblUrunAli" EntitySet="tblUrunAlis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlisUst_tblCaris" Association="MixErpDbModel.FK_tblUrunAlisUst_tblCaris">
+      <End Role="tblCari" EntitySet="tblCaris" />
+      <End Role="tblUrunAlisUst" EntitySet="tblUrunAlisUsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunler_tblCaris" Association="MixErpDbModel.FK_tblUrunler_tblCaris">
+      <End Role="tblCari" EntitySet="tblCaris" />
+      <End Role="tblUrunler" EntitySet="tblUrunlers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunSatisUst_tblCaris" Association="MixErpDbModel.FK_tblUrunSatisUst_tblCaris">
+      <End Role="tblCari" EntitySet="tblCaris" />
+      <End Role="tblUrunSatisUst" EntitySet="tblUrunSatisUsts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStokDurum_tblUrunler" Association="MixErpDbModel.FK_tblStokDurum_tblUrunler">
+      <End Role="tblUrunler" EntitySet="tblUrunlers" />
+      <End Role="tblStokDurum" EntitySet="tblStokDurums" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlis_tblUrunler" Association="MixErpDbModel.FK_tblUrunAlis_tblUrunler">
+      <End Role="tblUrunler" EntitySet="tblUrunlers" />
+      <End Role="tblUrunAli" EntitySet="tblUrunAlis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlisAlt_tblUrunler" Association="MixErpDbModel.FK_tblUrunAlisAlt_tblUrunler">
+      <End Role="tblUrunler" EntitySet="tblUrunlers" />
+      <End Role="tblUrunAlisAlt" EntitySet="tblUrunAlisAlts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunSatisAlt_tblUrunler" Association="MixErpDbModel.FK_tblUrunSatisAlt_tblUrunler">
+      <End Role="tblUrunler" EntitySet="tblUrunlers" />
+      <End Role="tblUrunSatisAlt" EntitySet="tblUrunSatisAlts" />
+    </AssociationSet>
+    <EntitySet Name="tblUsers" EntityType="MixErpDbModel.tblUser" />
+    <EntitySet Name="vwUrunAlisAltUsts" EntityType="MixErpDbModel.vwUrunAlisAltUst" />
+  </EntityContainer>
+  <EntityType Name="bBirim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BirimAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblUrunAlisAlts" Relationship="MixErpDbModel.FK_tblUrunAlisAlt_bBirim" FromRole="bBirim" ToRole="tblUrunAlisAlt" />
+    <NavigationProperty Name="tblUrunlers" Relationship="MixErpDbModel.FK_tblUrunler_bBirim" FromRole="bBirim" ToRole="tblUrunler" />
+    <NavigationProperty Name="tblUrunSatisAlts" Relationship="MixErpDbModel.FK_tblUrunSatisAlt_bBirim" FromRole="bBirim" ToRole="tblUrunSatisAlt" />
+  </EntityType>
+  <EntityType Name="bKategori">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KategoriAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblUrunlers" Relationship="MixErpDbModel.FK_tblUrunler_bMensei" FromRole="bKategori" ToRole="tblUrunler" />
+  </EntityType>
+  <EntityType Name="blgCariTipi">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CariTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblCaris" Relationship="MixErpDbModel.FK_tblCaris_blgCariTipis" FromRole="blgCariTipi" ToRole="tblCari" />
+  </EntityType>
+  <EntityType Name="blgDepartman">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DepartmanAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblPersonels" Relationship="MixErpDbModel.FK_tblPersonel_blgDepartman" FromRole="blgDepartman" ToRole="tblPersonel" />
+  </EntityType>
+  <EntityType Name="bMensei">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MenseiAdi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblUrunlers" Relationship="MixErpDbModel.FK_tblUrunler_bKategori" FromRole="bMensei" ToRole="tblUrunler" />
+  </EntityType>
+  <EntityType Name="bOdemeTurleri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MuhasebeKodu" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="OdemeTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="tblUrunAlis" Relationship="MixErpDbModel.FK_tblUrunAlis_bOdemeTurleri" FromRole="bOdemeTurleri" ToRole="tblUrunAli" />
+    <NavigationProperty Name="tblUrunAlisUsts" Relationship="MixErpDbModel.FK_tblUrunAlisUst_bOdemeTurleri" FromRole="bOdemeTurleri" ToRole="tblUrunAlisUst" />
+    <NavigationProperty Name="tblUrunSatisUsts" Relationship="MixErpDbModel.FK_tblUrunSatisUst_bOdemeTurleri" FromRole="bOdemeTurleri" ToRole="tblUrunSatisUst" />
+  </EntityType>
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="ilce_no" />
+    </Key>
+    <Property Name="ilce_no" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="isim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="il_no" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="iller" Relationship="MixErpDbModel.fk_il_no" FromRole="ilceler" ToRole="iller" />
+    <NavigationProperty Name="tblCaris" Relationship="MixErpDbModel.FK_tblCaris_ilceler" FromRole="ilceler" ToRole="tblCari" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="il_no" />
+    </Key>
+    <Property Name="il_no" Type="Int32" Nullable="false" />
+    <Property Name="isim" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="ilcelers" Relationship="MixErpDbModel.fk_il_no" FromRole="iller" ToRole="ilceler" />
+    <NavigationProperty Name="tblCaris" Relationship="MixErpDbModel.FK_tblCaris_Iller" FromRole="iller" ToRole="tblCari" />
+  </EntityType>
+  <EntityType Name="tblCari">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CariNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CariAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Tel" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="VergiD" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VergiNoTc" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="CariTipId" Type="Int32" />
+    <Property Name="SehirId" Type="Int32" />
+    <Property Name="IlceId" Type="Int32" />
+    <NavigationProperty Name="blgCariTipi" Relationship="MixErpDbModel.FK_tblCaris_blgCariTipis" FromRole="tblCari" ToRole="blgCariTipi" />
+    <NavigationProperty Name="ilceler" Relationship="MixErpDbModel.FK_tblCaris_ilceler" FromRole="tblCari" ToRole="ilceler" />
+    <NavigationProperty Name="iller" Relationship="MixErpDbModel.FK_tblCaris_Iller" FromRole="tblCari" ToRole="iller" />
+    <NavigationProperty Name="tblUrunAlis" Relationship="MixErpDbModel.FK_tblUrunAlis_tblCaris" FromRole="tblCari" ToRole="tblUrunAli" />
+    <NavigationProperty Name="tblUrunAlisUsts" Relationship="MixErpDbModel.FK_tblUrunAlisUst_tblCaris" FromRole="tblCari" ToRole="tblUrunAlisUst" />
+    <NavigationProperty Name="tblUrunlers" Relationship="MixErpDbModel.FK_tblUrunler_tblCaris" FromRole="tblCari" ToRole="tblUrunler" />
+    <NavigationProperty Name="tblUrunSatisUsts" Relationship="MixErpDbModel.FK_tblUrunSatisUst_tblCaris" FromRole="tblCari" ToRole="tblUrunSatisUst" />
+  </EntityType>
+  <EntityType Name="tblPersonel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PersonelNo" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="Adi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Adres" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Telefon" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DepartmanId" Type="Int32" />
+    <Property Name="IsBasTarih" Type="DateTime" Precision="0" />
+    <Property Name="IsSonTarih" Type="DateTime" Precision="0" />
+    <Property Name="DogumTarihi" Type="DateTime" Precision="0" />
+    <Property Name="Tcno" Type="String" MaxLength="11" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="blgDepartman" Relationship="MixErpDbModel.FK_tblPersonel_blgDepartman" FromRole="tblPersonel" ToRole="blgDepartman" />
+  </EntityType>
+  <EntityType Name="tblStokDurum">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StokKodu" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="Barkod" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="UrunId" Type="Int32" />
+    <Property Name="Depo" Type="Int32" />
+    <Property Name="Raf" Type="Int32" />
+    <Property Name="Ambar" Type="Int32" />
+    <Property Name="OBFiyat" Type="Decimal" Precision="18" Scale="2" />
+    <NavigationProperty Name="tblUrunler" Relationship="MixErpDbModel.FK_tblStokDurum_tblUrunler" FromRole="tblStokDurum" ToRole="tblUrunler" />
+  </EntityType>
+  <EntityType Name="tblUrunAli">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlisGrupNo" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="CariId" Type="Int32" />
+    <Property Name="ATarih" Type="DateTime" Precision="0" />
+    <Property Name="FaturaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vade" Type="Int32" />
+    <Property Name="OdemeId" Type="Int32" />
+    <Property Name="UrunId" Type="Int32" />
+    <Property Name="BFiyat" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="Adet" Type="Int32" />
+    <Property Name="BirimId" Type="Int32" />
+    <Property Name="AraToplam" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="KdvToplam" Type="Decimal" Precision="7" Scale="2" />
+    <Property Name="GenelToplam" Type="Decimal" Precision="7" Scale="2" />
+    <NavigationProperty Name="bOdemeTurleri" Relationship="MixErpDbModel.FK_tblUrunAlis_bOdemeTurleri" FromRole="tblUrunAli" ToRole="bOdemeTurleri" />
+    <NavigationProperty Name="tblCari" Relationship="MixErpDbModel.FK_tblUrunAlis_tblCaris" FromRole="tblUrunAli" ToRole="tblCari" />
+    <NavigationProperty Name="tblUrunler" Relationship="MixErpDbModel.FK_tblUrunAlis_tblUrunler" FromRole="tblUrunAli" ToRole="tblUrunler" />
+  </EntityType>
+  <EntityType Name="tblUrunAlisAlt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlisGrupNo" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="UrunId" Type="Int32" />
+    <Property Name="BFiyat" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Miktar" Type="Int32" />
+    <Property Name="BirimId" Type="Int32" />
+    <Property Name="AToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Kdv" Type="Decimal" Precision="9" Scale="2" />
+    <NavigationProperty Name="bBirim" Relationship="MixErpDbModel.FK_tblUrunAlisAlt_bBirim" FromRole="tblUrunAlisAlt" ToRole="bBirim" />
+    <NavigationProperty Name="tblUrunler" Relationship="MixErpDbModel.FK_tblUrunAlisAlt_tblUrunler" FromRole="tblUrunAlisAlt" ToRole="tblUrunler" />
+  </EntityType>
+  <EntityType Name="tblUrunAlisUst">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlisGrupNo" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="CariId" Type="Int32" />
+    <Property Name="ATarih" Type="DateTime" Precision="0" />
+    <Property Name="FaturaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vade" Type="Int32" />
+    <Property Name="OdemeId" Type="Int32" />
+    <Property Name="AraToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="KdvToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="GenelToplam" Type="Decimal" Precision="9" Scale="2" />
+    <NavigationProperty Name="bOdemeTurleri" Relationship="MixErpDbModel.FK_tblUrunAlisUst_bOdemeTurleri" FromRole="tblUrunAlisUst" ToRole="bOdemeTurleri" />
+    <NavigationProperty Name="tblCari" Relationship="MixErpDbModel.FK_tblUrunAlisUst_tblCaris" FromRole="tblUrunAlisUst" ToRole="tblCari" />
+  </EntityType>
+  <EntityType Name="tblUrunler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UrunAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MenseiId" Type="Int32" />
+    <Property Name="KategoriId" Type="Int32" />
+    <Property Name="BirimId" Type="Int32" />
+    <Property Name="CariId" Type="Int32" />
+    <NavigationProperty Name="bBirim" Relationship="MixErpDbModel.FK_tblUrunler_bBirim" FromRole="tblUrunler" ToRole="bBirim" />
+    <NavigationProperty Name="bKategori" Relationship="MixErpDbModel.FK_tblUrunler_bMensei" FromRole="tblUrunler" ToRole="bKategori" />
+    <NavigationProperty Name="bMensei" Relationship="MixErpDbModel.FK_tblUrunler_bKategori" FromRole="tblUrunler" ToRole="bMensei" />
+    <NavigationProperty Name="tblCari" Relationship="MixErpDbModel.FK_tblUrunler_tblCaris" FromRole="tblUrunler" ToRole="tblCari" />
+    <NavigationProperty Name="tblStokDurums" Relationship="MixErpDbModel.FK_tblStokDurum_tblUrunler" FromRole="tblUrunler" ToRole="tblStokDurum" />
+    <NavigationProperty Name="tblUrunAlis" Relationship="MixErpDbModel.FK_tblUrunAlis_tblUrunler" FromRole="tblUrunler" ToRole="tblUrunAli" />
+    <NavigationProperty Name="tblUrunAlisAlts" Relationship="MixErpDbModel.FK_tblUrunAlisAlt_tblUrunler" FromRole="tblUrunler" ToRole="tblUrunAlisAlt" />
+    <NavigationProperty Name="tblUrunSatisAlts" Relationship="MixErpDbModel.FK_tblUrunSatisAlt_tblUrunler" FromRole="tblUrunler" ToRole="tblUrunSatisAlt" />
+  </EntityType>
+  <EntityType Name="tblUrunSatisAlt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SatisGrupNo" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="UrunId" Type="Int32" />
+    <Property Name="BFiyat" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="KarOrani" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="SFiyat" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Miktar" Type="Int32" />
+    <Property Name="BirimId" Type="Int32" />
+    <Property Name="AToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Kdv" Type="Decimal" Precision="9" Scale="2" />
+    <NavigationProperty Name="bBirim" Relationship="MixErpDbModel.FK_tblUrunSatisAlt_bBirim" FromRole="tblUrunSatisAlt" ToRole="bBirim" />
+    <NavigationProperty Name="tblUrunler" Relationship="MixErpDbModel.FK_tblUrunSatisAlt_tblUrunler" FromRole="tblUrunSatisAlt" ToRole="tblUrunler" />
+  </EntityType>
+  <EntityType Name="tblUrunSatisUst">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="SatisGrupNo" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="CariId" Type="Int32" />
+    <Property Name="STarih" Type="DateTime" Precision="0" />
+    <Property Name="Vade" Type="Int32" />
+    <Property Name="OdemeId" Type="Int32" />
+    <Property Name="AraToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="KdvToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="GenelToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Durum" Type="Boolean" />
+    <NavigationProperty Name="bOdemeTurleri" Relationship="MixErpDbModel.FK_tblUrunSatisUst_bOdemeTurleri" FromRole="tblUrunSatisUst" ToRole="bOdemeTurleri" />
+    <NavigationProperty Name="tblCari" Relationship="MixErpDbModel.FK_tblUrunSatisUst_tblCaris" FromRole="tblUrunSatisUst" ToRole="tblCari" />
+  </EntityType>
+  <Association Name="FK_tblUrunAlisAlt_bBirim">
+    <End Type="MixErpDbModel.bBirim" Role="bBirim" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunAlisAlt" Role="tblUrunAlisAlt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bBirim">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlisAlt">
+        <PropertyRef Name="BirimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunler_bBirim">
+    <End Type="MixErpDbModel.bBirim" Role="bBirim" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunler" Role="tblUrunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bBirim">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunler">
+        <PropertyRef Name="BirimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunSatisAlt_bBirim">
+    <End Type="MixErpDbModel.bBirim" Role="bBirim" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunSatisAlt" Role="tblUrunSatisAlt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bBirim">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunSatisAlt">
+        <PropertyRef Name="BirimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunler_bMensei">
+    <End Type="MixErpDbModel.bKategori" Role="bKategori" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunler" Role="tblUrunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bKategori">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunler">
+        <PropertyRef Name="KategoriId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCaris_blgCariTipis">
+    <End Type="MixErpDbModel.blgCariTipi" Role="blgCariTipi" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblCari" Role="tblCari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgCariTipi">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblCari">
+        <PropertyRef Name="CariTipId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPersonel_blgDepartman">
+    <End Type="MixErpDbModel.blgDepartman" Role="blgDepartman" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblPersonel" Role="tblPersonel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgDepartman">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblPersonel">
+        <PropertyRef Name="DepartmanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunler_bKategori">
+    <End Type="MixErpDbModel.bMensei" Role="bMensei" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunler" Role="tblUrunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bMensei">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunler">
+        <PropertyRef Name="MenseiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlis_bOdemeTurleri">
+    <End Type="MixErpDbModel.bOdemeTurleri" Role="bOdemeTurleri" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunAli" Role="tblUrunAli" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bOdemeTurleri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAli">
+        <PropertyRef Name="OdemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlisUst_bOdemeTurleri">
+    <End Type="MixErpDbModel.bOdemeTurleri" Role="bOdemeTurleri" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunAlisUst" Role="tblUrunAlisUst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bOdemeTurleri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlisUst">
+        <PropertyRef Name="OdemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunSatisUst_bOdemeTurleri">
+    <End Type="MixErpDbModel.bOdemeTurleri" Role="bOdemeTurleri" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunSatisUst" Role="tblUrunSatisUst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bOdemeTurleri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunSatisUst">
+        <PropertyRef Name="OdemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_il_no">
+    <End Type="MixErpDbModel.iller" Role="iller" Multiplicity="1" />
+    <End Type="MixErpDbModel.ilceler" Role="ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="il_no" />
+      </Principal>
+      <Dependent Role="ilceler">
+        <PropertyRef Name="il_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCaris_ilceler">
+    <End Type="MixErpDbModel.ilceler" Role="ilceler" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblCari" Role="tblCari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ilceler">
+        <PropertyRef Name="ilce_no" />
+      </Principal>
+      <Dependent Role="tblCari">
+        <PropertyRef Name="IlceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCaris_Iller">
+    <End Type="MixErpDbModel.iller" Role="iller" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblCari" Role="tblCari" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="il_no" />
+      </Principal>
+      <Dependent Role="tblCari">
+        <PropertyRef Name="SehirId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlis_tblCaris">
+    <End Type="MixErpDbModel.tblCari" Role="tblCari" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunAli" Role="tblUrunAli" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCari">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAli">
+        <PropertyRef Name="CariId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlisUst_tblCaris">
+    <End Type="MixErpDbModel.tblCari" Role="tblCari" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunAlisUst" Role="tblUrunAlisUst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCari">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlisUst">
+        <PropertyRef Name="CariId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunler_tblCaris">
+    <End Type="MixErpDbModel.tblCari" Role="tblCari" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunler" Role="tblUrunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCari">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunler">
+        <PropertyRef Name="CariId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunSatisUst_tblCaris">
+    <End Type="MixErpDbModel.tblCari" Role="tblCari" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunSatisUst" Role="tblUrunSatisUst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCari">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunSatisUst">
+        <PropertyRef Name="CariId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStokDurum_tblUrunler">
+    <End Type="MixErpDbModel.tblUrunler" Role="tblUrunler" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblStokDurum" Role="tblStokDurum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUrunler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblStokDurum">
+        <PropertyRef Name="UrunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlis_tblUrunler">
+    <End Type="MixErpDbModel.tblUrunler" Role="tblUrunler" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunAli" Role="tblUrunAli" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUrunler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAli">
+        <PropertyRef Name="UrunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlisAlt_tblUrunler">
+    <End Type="MixErpDbModel.tblUrunler" Role="tblUrunler" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunAlisAlt" Role="tblUrunAlisAlt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUrunler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlisAlt">
+        <PropertyRef Name="UrunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunSatisAlt_tblUrunler">
+    <End Type="MixErpDbModel.tblUrunler" Role="tblUrunler" Multiplicity="0..1" />
+    <End Type="MixErpDbModel.tblUrunSatisAlt" Role="tblUrunSatisAlt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUrunler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunSatisAlt">
+        <PropertyRef Name="UrunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="KulAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Sifre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Role" Type="Int32" />
+  </EntityType>
+  <EntityType Name="vwUrunAlisAltUst">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="AlisGrupNo" Type="String" MaxLength="7" FixedLength="false" Unicode="true" />
+    <Property Name="CariAdi" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="ATarih" Type="DateTime" Precision="0" />
+    <Property Name="FaturaNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Vade" Type="Int32" />
+    <Property Name="OdemeTipi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AraToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="KdvToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="GenelToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="UrunId" Type="Int32" />
+    <Property Name="UrunKodu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UrunAciklama" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="BFiyat" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="Miktar" Type="Int32" />
+    <Property Name="AToplam" Type="Decimal" Precision="9" Scale="2" />
+    <Property Name="BirimAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Kdv" Type="Decimal" Precision="9" Scale="2" />
+  </EntityType>
+</Schema>

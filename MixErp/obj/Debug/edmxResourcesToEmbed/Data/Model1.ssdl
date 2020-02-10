@@ -1,0 +1,606 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MixErpDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="bBirim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BirimAdi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bKategori">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KategoriAdi" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="blgCariTipis">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CariTipi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="blgDepartman">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DepartmanAdi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="bMensei">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MenseiAdi" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="bOdemeTurleri">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MuhasebeKodu" Type="nvarchar" MaxLength="10" />
+    <Property Name="OdemeTipi" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ilceler">
+    <Key>
+      <PropertyRef Name="ilce_no" />
+    </Key>
+    <Property Name="ilce_no" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="isim" Type="varchar" MaxLength="50" />
+    <Property Name="il_no" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="iller">
+    <Key>
+      <PropertyRef Name="il_no" />
+    </Key>
+    <Property Name="il_no" Type="int" Nullable="false" />
+    <Property Name="isim" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblCaris">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CariNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CariAdi" Type="nvarchar" MaxLength="250" />
+    <Property Name="Adres" Type="nvarchar(max)" />
+    <Property Name="Tel" Type="nvarchar" MaxLength="20" />
+    <Property Name="VergiD" Type="nvarchar" MaxLength="50" />
+    <Property Name="VergiNoTc" Type="nvarchar" MaxLength="11" />
+    <Property Name="CariTipId" Type="int" />
+    <Property Name="SehirId" Type="int" />
+    <Property Name="IlceId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblPersonel">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PersonelNo" Type="nvarchar" MaxLength="7" />
+    <Property Name="Adi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adres" Type="nvarchar(max)" />
+    <Property Name="Telefon" Type="nvarchar" MaxLength="20" />
+    <Property Name="DepartmanId" Type="int" />
+    <Property Name="IsBasTarih" Type="date" />
+    <Property Name="IsSonTarih" Type="date" />
+    <Property Name="DogumTarihi" Type="date" />
+    <Property Name="Tcno" Type="nvarchar" MaxLength="11" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tblStokDurum">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StokKodu" Type="nvarchar" MaxLength="7" />
+    <Property Name="Barkod" Type="nvarchar" MaxLength="200" />
+    <Property Name="UrunId" Type="int" />
+    <Property Name="Depo" Type="int" />
+    <Property Name="Raf" Type="int" />
+    <Property Name="Ambar" Type="int" />
+    <Property Name="OBFiyat" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblUrunAlis">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlisGrupNo" Type="nvarchar" MaxLength="7" />
+    <Property Name="CariId" Type="int" />
+    <Property Name="ATarih" Type="date" />
+    <Property Name="FaturaNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vade" Type="int" />
+    <Property Name="OdemeId" Type="int" />
+    <Property Name="UrunId" Type="int" />
+    <Property Name="BFiyat" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="Adet" Type="int" />
+    <Property Name="BirimId" Type="int" />
+    <Property Name="AraToplam" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="KdvToplam" Type="decimal" Precision="7" Scale="2" />
+    <Property Name="GenelToplam" Type="decimal" Precision="7" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblUrunAlisAlt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlisGrupNo" Type="nvarchar" MaxLength="7" />
+    <Property Name="UrunId" Type="int" />
+    <Property Name="BFiyat" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Miktar" Type="int" />
+    <Property Name="BirimId" Type="int" />
+    <Property Name="AToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Kdv" Type="decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblUrunAlisUst">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlisGrupNo" Type="nvarchar" MaxLength="7" />
+    <Property Name="CariId" Type="int" />
+    <Property Name="ATarih" Type="date" />
+    <Property Name="FaturaNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vade" Type="int" />
+    <Property Name="OdemeId" Type="int" />
+    <Property Name="AraToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="KdvToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="GenelToplam" Type="decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblUrunler">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrunKodu" Type="nvarchar" MaxLength="50" />
+    <Property Name="UrunAciklama" Type="nvarchar(max)" />
+    <Property Name="MenseiId" Type="int" />
+    <Property Name="KategoriId" Type="int" />
+    <Property Name="BirimId" Type="int" />
+    <Property Name="CariId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblUrunSatisAlt">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SatisGrupNo" Type="nvarchar" MaxLength="7" />
+    <Property Name="UrunId" Type="int" />
+    <Property Name="BFiyat" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="KarOrani" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="SFiyat" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Miktar" Type="int" />
+    <Property Name="BirimId" Type="int" />
+    <Property Name="AToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Kdv" Type="decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <EntityType Name="tblUrunSatisUst">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SatisGrupNo" Type="nvarchar" MaxLength="7" />
+    <Property Name="CariId" Type="int" />
+    <Property Name="STarih" Type="date" />
+    <Property Name="Vade" Type="int" />
+    <Property Name="OdemeId" Type="int" />
+    <Property Name="AraToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="KdvToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="GenelToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Durum" Type="bit" />
+  </EntityType>
+  <EntityType Name="tblUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="KulAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sifre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'MixErpDb.dbo.vwUrunAlisAltUst' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="vwUrunAlisAltUst">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="AlisGrupNo" Type="nvarchar" MaxLength="7" />
+    <Property Name="CariAdi" Type="nvarchar" MaxLength="250" />
+    <Property Name="ATarih" Type="date" />
+    <Property Name="FaturaNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vade" Type="int" />
+    <Property Name="OdemeTipi" Type="nvarchar" MaxLength="50" />
+    <Property Name="AraToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="KdvToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="GenelToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="UrunId" Type="int" />
+    <Property Name="UrunKodu" Type="nvarchar" MaxLength="50" />
+    <Property Name="UrunAciklama" Type="nvarchar(max)" />
+    <Property Name="BFiyat" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="Miktar" Type="int" />
+    <Property Name="AToplam" Type="decimal" Precision="9" Scale="2" />
+    <Property Name="BirimAdi" Type="nvarchar" MaxLength="50" />
+    <Property Name="Kdv" Type="decimal" Precision="9" Scale="2" />
+  </EntityType>
+  <Association Name="fk_il_no">
+    <End Role="iller" Type="Self.iller" Multiplicity="1" />
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="il_no" />
+      </Principal>
+      <Dependent Role="ilceler">
+        <PropertyRef Name="il_no" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCaris_blgCariTipis">
+    <End Role="blgCariTipis" Type="Self.blgCariTipis" Multiplicity="0..1" />
+    <End Role="tblCaris" Type="Self.tblCaris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgCariTipis">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblCaris">
+        <PropertyRef Name="CariTipId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCaris_Iller">
+    <End Role="iller" Type="Self.iller" Multiplicity="0..1" />
+    <End Role="tblCaris" Type="Self.tblCaris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="iller">
+        <PropertyRef Name="il_no" />
+      </Principal>
+      <Dependent Role="tblCaris">
+        <PropertyRef Name="SehirId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCaris_ilceler">
+    <End Role="ilceler" Type="Self.ilceler" Multiplicity="0..1" />
+    <End Role="tblCaris" Type="Self.tblCaris" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ilceler">
+        <PropertyRef Name="ilce_no" />
+      </Principal>
+      <Dependent Role="tblCaris">
+        <PropertyRef Name="IlceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblPersonel_blgDepartman">
+    <End Role="blgDepartman" Type="Self.blgDepartman" Multiplicity="0..1" />
+    <End Role="tblPersonel" Type="Self.tblPersonel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="blgDepartman">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblPersonel">
+        <PropertyRef Name="DepartmanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStokDurum_tblUrunler">
+    <End Role="tblUrunler" Type="Self.tblUrunler" Multiplicity="0..1" />
+    <End Role="tblStokDurum" Type="Self.tblStokDurum" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUrunler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblStokDurum">
+        <PropertyRef Name="UrunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlis_bOdemeTurleri">
+    <End Role="bOdemeTurleri" Type="Self.bOdemeTurleri" Multiplicity="0..1" />
+    <End Role="tblUrunAlis" Type="Self.tblUrunAlis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bOdemeTurleri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlis">
+        <PropertyRef Name="OdemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlis_tblCaris">
+    <End Role="tblCaris" Type="Self.tblCaris" Multiplicity="0..1" />
+    <End Role="tblUrunAlis" Type="Self.tblUrunAlis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCaris">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlis">
+        <PropertyRef Name="CariId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlis_tblUrunler">
+    <End Role="tblUrunler" Type="Self.tblUrunler" Multiplicity="0..1" />
+    <End Role="tblUrunAlis" Type="Self.tblUrunAlis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUrunler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlis">
+        <PropertyRef Name="UrunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlisAlt_bBirim">
+    <End Role="bBirim" Type="Self.bBirim" Multiplicity="0..1" />
+    <End Role="tblUrunAlisAlt" Type="Self.tblUrunAlisAlt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bBirim">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlisAlt">
+        <PropertyRef Name="BirimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlisAlt_tblUrunler">
+    <End Role="tblUrunler" Type="Self.tblUrunler" Multiplicity="0..1" />
+    <End Role="tblUrunAlisAlt" Type="Self.tblUrunAlisAlt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUrunler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlisAlt">
+        <PropertyRef Name="UrunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlisUst_bOdemeTurleri">
+    <End Role="bOdemeTurleri" Type="Self.bOdemeTurleri" Multiplicity="0..1" />
+    <End Role="tblUrunAlisUst" Type="Self.tblUrunAlisUst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bOdemeTurleri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlisUst">
+        <PropertyRef Name="OdemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunAlisUst_tblCaris">
+    <End Role="tblCaris" Type="Self.tblCaris" Multiplicity="0..1" />
+    <End Role="tblUrunAlisUst" Type="Self.tblUrunAlisUst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCaris">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunAlisUst">
+        <PropertyRef Name="CariId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunler_bBirim">
+    <End Role="bBirim" Type="Self.bBirim" Multiplicity="0..1" />
+    <End Role="tblUrunler" Type="Self.tblUrunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bBirim">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunler">
+        <PropertyRef Name="BirimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunler_bKategori">
+    <End Role="bMensei" Type="Self.bMensei" Multiplicity="0..1" />
+    <End Role="tblUrunler" Type="Self.tblUrunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bMensei">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunler">
+        <PropertyRef Name="MenseiId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunler_bMensei">
+    <End Role="bKategori" Type="Self.bKategori" Multiplicity="0..1" />
+    <End Role="tblUrunler" Type="Self.tblUrunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bKategori">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunler">
+        <PropertyRef Name="KategoriId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunler_tblCaris">
+    <End Role="tblCaris" Type="Self.tblCaris" Multiplicity="0..1" />
+    <End Role="tblUrunler" Type="Self.tblUrunler" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCaris">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunler">
+        <PropertyRef Name="CariId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunSatisAlt_bBirim">
+    <End Role="bBirim" Type="Self.bBirim" Multiplicity="0..1" />
+    <End Role="tblUrunSatisAlt" Type="Self.tblUrunSatisAlt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bBirim">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunSatisAlt">
+        <PropertyRef Name="BirimId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunSatisAlt_tblUrunler">
+    <End Role="tblUrunler" Type="Self.tblUrunler" Multiplicity="0..1" />
+    <End Role="tblUrunSatisAlt" Type="Self.tblUrunSatisAlt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblUrunler">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunSatisAlt">
+        <PropertyRef Name="UrunId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunSatisUst_bOdemeTurleri">
+    <End Role="bOdemeTurleri" Type="Self.bOdemeTurleri" Multiplicity="0..1" />
+    <End Role="tblUrunSatisUst" Type="Self.tblUrunSatisUst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="bOdemeTurleri">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunSatisUst">
+        <PropertyRef Name="OdemeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblUrunSatisUst_tblCaris">
+    <End Role="tblCaris" Type="Self.tblCaris" Multiplicity="0..1" />
+    <End Role="tblUrunSatisUst" Type="Self.tblUrunSatisUst" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCaris">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tblUrunSatisUst">
+        <PropertyRef Name="CariId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MixErpDbModelStoreContainer">
+    <EntitySet Name="bBirim" EntityType="Self.bBirim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bKategori" EntityType="Self.bKategori" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="blgCariTipis" EntityType="Self.blgCariTipis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="blgDepartman" EntityType="Self.blgDepartman" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bMensei" EntityType="Self.bMensei" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bOdemeTurleri" EntityType="Self.bOdemeTurleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ilceler" EntityType="Self.ilceler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="iller" EntityType="Self.iller" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCaris" EntityType="Self.tblCaris" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblPersonel" EntityType="Self.tblPersonel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblStokDurum" EntityType="Self.tblStokDurum" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUrunAlis" EntityType="Self.tblUrunAlis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUrunAlisAlt" EntityType="Self.tblUrunAlisAlt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUrunAlisUst" EntityType="Self.tblUrunAlisUst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUrunler" EntityType="Self.tblUrunler" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUrunSatisAlt" EntityType="Self.tblUrunSatisAlt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUrunSatisUst" EntityType="Self.tblUrunSatisUst" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="vwUrunAlisAltUst" EntityType="Self.vwUrunAlisAltUst" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [vwUrunAlisAltUst].[Id] AS [Id], 
+    [vwUrunAlisAltUst].[AlisGrupNo] AS [AlisGrupNo], 
+    [vwUrunAlisAltUst].[CariAdi] AS [CariAdi], 
+    [vwUrunAlisAltUst].[ATarih] AS [ATarih], 
+    [vwUrunAlisAltUst].[FaturaNo] AS [FaturaNo], 
+    [vwUrunAlisAltUst].[Vade] AS [Vade], 
+    [vwUrunAlisAltUst].[OdemeTipi] AS [OdemeTipi], 
+    [vwUrunAlisAltUst].[AraToplam] AS [AraToplam], 
+    [vwUrunAlisAltUst].[KdvToplam] AS [KdvToplam], 
+    [vwUrunAlisAltUst].[GenelToplam] AS [GenelToplam], 
+    [vwUrunAlisAltUst].[UrunId] AS [UrunId], 
+    [vwUrunAlisAltUst].[UrunKodu] AS [UrunKodu], 
+    [vwUrunAlisAltUst].[UrunAciklama] AS [UrunAciklama], 
+    [vwUrunAlisAltUst].[BFiyat] AS [BFiyat], 
+    [vwUrunAlisAltUst].[Miktar] AS [Miktar], 
+    [vwUrunAlisAltUst].[AToplam] AS [AToplam], 
+    [vwUrunAlisAltUst].[BirimAdi] AS [BirimAdi], 
+    [vwUrunAlisAltUst].[Kdv] AS [Kdv]
+    FROM [dbo].[vwUrunAlisAltUst] AS [vwUrunAlisAltUst]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="fk_il_no" Association="Self.fk_il_no">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="ilceler" EntitySet="ilceler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCaris_blgCariTipis" Association="Self.FK_tblCaris_blgCariTipis">
+      <End Role="blgCariTipis" EntitySet="blgCariTipis" />
+      <End Role="tblCaris" EntitySet="tblCaris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCaris_Iller" Association="Self.FK_tblCaris_Iller">
+      <End Role="iller" EntitySet="iller" />
+      <End Role="tblCaris" EntitySet="tblCaris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCaris_ilceler" Association="Self.FK_tblCaris_ilceler">
+      <End Role="ilceler" EntitySet="ilceler" />
+      <End Role="tblCaris" EntitySet="tblCaris" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblPersonel_blgDepartman" Association="Self.FK_tblPersonel_blgDepartman">
+      <End Role="blgDepartman" EntitySet="blgDepartman" />
+      <End Role="tblPersonel" EntitySet="tblPersonel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStokDurum_tblUrunler" Association="Self.FK_tblStokDurum_tblUrunler">
+      <End Role="tblUrunler" EntitySet="tblUrunler" />
+      <End Role="tblStokDurum" EntitySet="tblStokDurum" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlis_bOdemeTurleri" Association="Self.FK_tblUrunAlis_bOdemeTurleri">
+      <End Role="bOdemeTurleri" EntitySet="bOdemeTurleri" />
+      <End Role="tblUrunAlis" EntitySet="tblUrunAlis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlis_tblCaris" Association="Self.FK_tblUrunAlis_tblCaris">
+      <End Role="tblCaris" EntitySet="tblCaris" />
+      <End Role="tblUrunAlis" EntitySet="tblUrunAlis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlis_tblUrunler" Association="Self.FK_tblUrunAlis_tblUrunler">
+      <End Role="tblUrunler" EntitySet="tblUrunler" />
+      <End Role="tblUrunAlis" EntitySet="tblUrunAlis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlisAlt_bBirim" Association="Self.FK_tblUrunAlisAlt_bBirim">
+      <End Role="bBirim" EntitySet="bBirim" />
+      <End Role="tblUrunAlisAlt" EntitySet="tblUrunAlisAlt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlisAlt_tblUrunler" Association="Self.FK_tblUrunAlisAlt_tblUrunler">
+      <End Role="tblUrunler" EntitySet="tblUrunler" />
+      <End Role="tblUrunAlisAlt" EntitySet="tblUrunAlisAlt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlisUst_bOdemeTurleri" Association="Self.FK_tblUrunAlisUst_bOdemeTurleri">
+      <End Role="bOdemeTurleri" EntitySet="bOdemeTurleri" />
+      <End Role="tblUrunAlisUst" EntitySet="tblUrunAlisUst" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunAlisUst_tblCaris" Association="Self.FK_tblUrunAlisUst_tblCaris">
+      <End Role="tblCaris" EntitySet="tblCaris" />
+      <End Role="tblUrunAlisUst" EntitySet="tblUrunAlisUst" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunler_bBirim" Association="Self.FK_tblUrunler_bBirim">
+      <End Role="bBirim" EntitySet="bBirim" />
+      <End Role="tblUrunler" EntitySet="tblUrunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunler_bKategori" Association="Self.FK_tblUrunler_bKategori">
+      <End Role="bMensei" EntitySet="bMensei" />
+      <End Role="tblUrunler" EntitySet="tblUrunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunler_bMensei" Association="Self.FK_tblUrunler_bMensei">
+      <End Role="bKategori" EntitySet="bKategori" />
+      <End Role="tblUrunler" EntitySet="tblUrunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunler_tblCaris" Association="Self.FK_tblUrunler_tblCaris">
+      <End Role="tblCaris" EntitySet="tblCaris" />
+      <End Role="tblUrunler" EntitySet="tblUrunler" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunSatisAlt_bBirim" Association="Self.FK_tblUrunSatisAlt_bBirim">
+      <End Role="bBirim" EntitySet="bBirim" />
+      <End Role="tblUrunSatisAlt" EntitySet="tblUrunSatisAlt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunSatisAlt_tblUrunler" Association="Self.FK_tblUrunSatisAlt_tblUrunler">
+      <End Role="tblUrunler" EntitySet="tblUrunler" />
+      <End Role="tblUrunSatisAlt" EntitySet="tblUrunSatisAlt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunSatisUst_bOdemeTurleri" Association="Self.FK_tblUrunSatisUst_bOdemeTurleri">
+      <End Role="bOdemeTurleri" EntitySet="bOdemeTurleri" />
+      <End Role="tblUrunSatisUst" EntitySet="tblUrunSatisUst" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblUrunSatisUst_tblCaris" Association="Self.FK_tblUrunSatisUst_tblCaris">
+      <End Role="tblCaris" EntitySet="tblCaris" />
+      <End Role="tblUrunSatisUst" EntitySet="tblUrunSatisUst" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

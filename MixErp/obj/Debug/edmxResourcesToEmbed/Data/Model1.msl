@@ -1,0 +1,247 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MixErpDbModelStoreContainer" CdmEntityContainer="MixErpDbEntities">
+    <EntitySetMapping Name="bBirims">
+      <EntityTypeMapping TypeName="MixErpDbModel.bBirim">
+        <MappingFragment StoreEntitySet="bBirim">
+          <ScalarProperty Name="BirimAdi" ColumnName="BirimAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bKategoris">
+      <EntityTypeMapping TypeName="MixErpDbModel.bKategori">
+        <MappingFragment StoreEntitySet="bKategori">
+          <ScalarProperty Name="KategoriAdi" ColumnName="KategoriAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgCariTipis">
+      <EntityTypeMapping TypeName="MixErpDbModel.blgCariTipi">
+        <MappingFragment StoreEntitySet="blgCariTipis">
+          <ScalarProperty Name="CariTipi" ColumnName="CariTipi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="blgDepartmen">
+      <EntityTypeMapping TypeName="MixErpDbModel.blgDepartman">
+        <MappingFragment StoreEntitySet="blgDepartman">
+          <ScalarProperty Name="DepartmanAdi" ColumnName="DepartmanAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bMenseis">
+      <EntityTypeMapping TypeName="MixErpDbModel.bMensei">
+        <MappingFragment StoreEntitySet="bMensei">
+          <ScalarProperty Name="MenseiAdi" ColumnName="MenseiAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="bOdemeTurleris">
+      <EntityTypeMapping TypeName="MixErpDbModel.bOdemeTurleri">
+        <MappingFragment StoreEntitySet="bOdemeTurleri">
+          <ScalarProperty Name="OdemeTipi" ColumnName="OdemeTipi" />
+          <ScalarProperty Name="MuhasebeKodu" ColumnName="MuhasebeKodu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ilcelers">
+      <EntityTypeMapping TypeName="MixErpDbModel.ilceler">
+        <MappingFragment StoreEntitySet="ilceler">
+          <ScalarProperty Name="il_no" ColumnName="il_no" />
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="ilce_no" ColumnName="ilce_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="illers">
+      <EntityTypeMapping TypeName="MixErpDbModel.iller">
+        <MappingFragment StoreEntitySet="iller">
+          <ScalarProperty Name="isim" ColumnName="isim" />
+          <ScalarProperty Name="il_no" ColumnName="il_no" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCaris">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblCari">
+        <MappingFragment StoreEntitySet="tblCaris">
+          <ScalarProperty Name="IlceId" ColumnName="IlceId" />
+          <ScalarProperty Name="SehirId" ColumnName="SehirId" />
+          <ScalarProperty Name="CariTipId" ColumnName="CariTipId" />
+          <ScalarProperty Name="VergiNoTc" ColumnName="VergiNoTc" />
+          <ScalarProperty Name="VergiD" ColumnName="VergiD" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="CariAdi" ColumnName="CariAdi" />
+          <ScalarProperty Name="CariNo" ColumnName="CariNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblPersonels">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblPersonel">
+        <MappingFragment StoreEntitySet="tblPersonel">
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Tcno" ColumnName="Tcno" />
+          <ScalarProperty Name="DogumTarihi" ColumnName="DogumTarihi" />
+          <ScalarProperty Name="IsSonTarih" ColumnName="IsSonTarih" />
+          <ScalarProperty Name="IsBasTarih" ColumnName="IsBasTarih" />
+          <ScalarProperty Name="DepartmanId" ColumnName="DepartmanId" />
+          <ScalarProperty Name="Telefon" ColumnName="Telefon" />
+          <ScalarProperty Name="Adres" ColumnName="Adres" />
+          <ScalarProperty Name="Adi" ColumnName="Adi" />
+          <ScalarProperty Name="PersonelNo" ColumnName="PersonelNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStokDurums">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblStokDurum">
+        <MappingFragment StoreEntitySet="tblStokDurum">
+          <ScalarProperty Name="OBFiyat" ColumnName="OBFiyat" />
+          <ScalarProperty Name="Ambar" ColumnName="Ambar" />
+          <ScalarProperty Name="Raf" ColumnName="Raf" />
+          <ScalarProperty Name="Depo" ColumnName="Depo" />
+          <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+          <ScalarProperty Name="Barkod" ColumnName="Barkod" />
+          <ScalarProperty Name="StokKodu" ColumnName="StokKodu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUrunAlis">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblUrunAli">
+        <MappingFragment StoreEntitySet="tblUrunAlis">
+          <ScalarProperty Name="GenelToplam" ColumnName="GenelToplam" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="AraToplam" ColumnName="AraToplam" />
+          <ScalarProperty Name="BirimId" ColumnName="BirimId" />
+          <ScalarProperty Name="Adet" ColumnName="Adet" />
+          <ScalarProperty Name="BFiyat" ColumnName="BFiyat" />
+          <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+          <ScalarProperty Name="OdemeId" ColumnName="OdemeId" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="FaturaNo" ColumnName="FaturaNo" />
+          <ScalarProperty Name="ATarih" ColumnName="ATarih" />
+          <ScalarProperty Name="CariId" ColumnName="CariId" />
+          <ScalarProperty Name="AlisGrupNo" ColumnName="AlisGrupNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUrunAlisAlts">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblUrunAlisAlt">
+        <MappingFragment StoreEntitySet="tblUrunAlisAlt">
+          <ScalarProperty Name="Kdv" ColumnName="Kdv" />
+          <ScalarProperty Name="AToplam" ColumnName="AToplam" />
+          <ScalarProperty Name="BirimId" ColumnName="BirimId" />
+          <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+          <ScalarProperty Name="BFiyat" ColumnName="BFiyat" />
+          <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+          <ScalarProperty Name="AlisGrupNo" ColumnName="AlisGrupNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUrunAlisUsts">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblUrunAlisUst">
+        <MappingFragment StoreEntitySet="tblUrunAlisUst">
+          <ScalarProperty Name="GenelToplam" ColumnName="GenelToplam" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="AraToplam" ColumnName="AraToplam" />
+          <ScalarProperty Name="OdemeId" ColumnName="OdemeId" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="FaturaNo" ColumnName="FaturaNo" />
+          <ScalarProperty Name="ATarih" ColumnName="ATarih" />
+          <ScalarProperty Name="CariId" ColumnName="CariId" />
+          <ScalarProperty Name="AlisGrupNo" ColumnName="AlisGrupNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUrunlers">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblUrunler">
+        <MappingFragment StoreEntitySet="tblUrunler">
+          <ScalarProperty Name="CariId" ColumnName="CariId" />
+          <ScalarProperty Name="BirimId" ColumnName="BirimId" />
+          <ScalarProperty Name="KategoriId" ColumnName="KategoriId" />
+          <ScalarProperty Name="MenseiId" ColumnName="MenseiId" />
+          <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
+          <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUrunSatisAlts">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblUrunSatisAlt">
+        <MappingFragment StoreEntitySet="tblUrunSatisAlt">
+          <ScalarProperty Name="Kdv" ColumnName="Kdv" />
+          <ScalarProperty Name="AToplam" ColumnName="AToplam" />
+          <ScalarProperty Name="BirimId" ColumnName="BirimId" />
+          <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+          <ScalarProperty Name="SFiyat" ColumnName="SFiyat" />
+          <ScalarProperty Name="KarOrani" ColumnName="KarOrani" />
+          <ScalarProperty Name="BFiyat" ColumnName="BFiyat" />
+          <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+          <ScalarProperty Name="SatisGrupNo" ColumnName="SatisGrupNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUrunSatisUsts">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblUrunSatisUst">
+        <MappingFragment StoreEntitySet="tblUrunSatisUst">
+          <ScalarProperty Name="Durum" ColumnName="Durum" />
+          <ScalarProperty Name="GenelToplam" ColumnName="GenelToplam" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="AraToplam" ColumnName="AraToplam" />
+          <ScalarProperty Name="OdemeId" ColumnName="OdemeId" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="STarih" ColumnName="STarih" />
+          <ScalarProperty Name="CariId" ColumnName="CariId" />
+          <ScalarProperty Name="SatisGrupNo" ColumnName="SatisGrupNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblUsers">
+      <EntityTypeMapping TypeName="MixErpDbModel.tblUser">
+        <MappingFragment StoreEntitySet="tblUsers">
+          <ScalarProperty Name="Role" ColumnName="Role" />
+          <ScalarProperty Name="Sifre" ColumnName="Sifre" />
+          <ScalarProperty Name="KulAdi" ColumnName="KulAdi" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vwUrunAlisAltUsts">
+      <EntityTypeMapping TypeName="MixErpDbModel.vwUrunAlisAltUst">
+        <MappingFragment StoreEntitySet="vwUrunAlisAltUst">
+          <ScalarProperty Name="Kdv" ColumnName="Kdv" />
+          <ScalarProperty Name="BirimAdi" ColumnName="BirimAdi" />
+          <ScalarProperty Name="AToplam" ColumnName="AToplam" />
+          <ScalarProperty Name="Miktar" ColumnName="Miktar" />
+          <ScalarProperty Name="BFiyat" ColumnName="BFiyat" />
+          <ScalarProperty Name="UrunAciklama" ColumnName="UrunAciklama" />
+          <ScalarProperty Name="UrunKodu" ColumnName="UrunKodu" />
+          <ScalarProperty Name="UrunId" ColumnName="UrunId" />
+          <ScalarProperty Name="GenelToplam" ColumnName="GenelToplam" />
+          <ScalarProperty Name="KdvToplam" ColumnName="KdvToplam" />
+          <ScalarProperty Name="AraToplam" ColumnName="AraToplam" />
+          <ScalarProperty Name="OdemeTipi" ColumnName="OdemeTipi" />
+          <ScalarProperty Name="Vade" ColumnName="Vade" />
+          <ScalarProperty Name="FaturaNo" ColumnName="FaturaNo" />
+          <ScalarProperty Name="ATarih" ColumnName="ATarih" />
+          <ScalarProperty Name="CariAdi" ColumnName="CariAdi" />
+          <ScalarProperty Name="AlisGrupNo" ColumnName="AlisGrupNo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
