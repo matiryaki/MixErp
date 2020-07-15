@@ -1,2 +1,2 @@
 # MixErp
- Çeşitli ERP modülleri tasarımı yapıldı.
+ Çeşitli ERP modülleri projesi oluşturuldu.
